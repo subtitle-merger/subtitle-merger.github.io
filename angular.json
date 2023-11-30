@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "subtitle-merger:build:production"
+              "buildTarget": "subtitle-merger:build:production"
             },
             "development": {
-              "browserTarget": "subtitle-merger:build:development"
+              "buildTarget": "subtitle-merger:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "subtitle-merger:build"
+            "buildTarget": "subtitle-merger:build"
           }
         },
         "test": {
