@@ -1,0 +1,13 @@
+<section class="file-input-zone">
+    <div class="title">Upload files</div>
+    <div class="file-input-wrapper">
+        <div class="file-input-container">
+            <label for="file1">File 1</label>
+            <input type="file" name="file1" id="file1" (change)="onFileChange($event, 1)">
+        </div>
+        <div class="file-input-container">
+            <label for="file2">File 2</label>
+            <input type="file" name="file2" id="file2" (change)="onFileChange($event, 2)">
+        </div>
+    </div>
+</section>

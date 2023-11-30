@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FileStorageService } from './file-storage/file-storage.service';
 
 @Component({
     selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+    constructor(private fileStorage: FileStorageService) {}
+
+    onFileChange(file: any, type: 1 | 2): void {
+        console.log(file, type);
+    }
 }
