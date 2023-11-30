@@ -11,3 +11,28 @@
         </div>
     </div>
 </section>
+<section class="controls">
+    <button class="merge" (click)="onMergeClick()">Merge files</button>
+</section>
+<section class="timeline" [style]="sectionHeight()">
+    @if (!file1Data().length && !file2Data().length) {
+        <div class="no-data-loaded">No files loaded yet!</div>
+    } @else {
+        <div class="column column-1">
+            @for (item of file1Data(); track $index) {
+                <div class="timeline-item" [style]="getTimelinePeriodStyle(item.start, item.end)" [title]="item.timestamp">
+                    <div class="timeline-number">{{ item.number }}</div>
+                    <pre class="timeline-content">{{ item.content }}</pre>
+                </div>
+            }
+        </div>
+        <div class="column column-2">
+            @for (item of file2Data(); track $index) {
+                <div class="timeline-item" [style]="getTimelinePeriodStyle(item.start, item.end)" [title]="item.timestamp">
+                    <div class="timeline-number">{{ item.number }}</div>
+                    <pre class="timeline-content">{{ item.content }}</pre>
+                </div>
+            }
+        </div>
+    }
+</section>

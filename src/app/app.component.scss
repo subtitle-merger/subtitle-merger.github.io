@@ -1,0 +1,58 @@
+@import '../styles/variables.scss';
+
+.timeline {
+    display: flex;
+    justify-content: stretch;
+    min-height: 200px;
+    width: 100%;
+    align-items: center;
+    font-size: 12px;
+
+    > * {
+        flex-grow: 1;
+    }
+
+    .no-data-loaded {
+        text-align: center;
+    }
+    .column {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        display: flex;
+
+        .timeline-item {
+            position: absolute;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+
+            .timeline-number {
+                font-weight: 600;
+            }
+            .timeline-content {
+                font-family: monospace;
+            }
+        }
+        &.column-1 {
+            justify-content: flex-end;
+            border-right: $timeline-width solid $red;
+
+            .timeline-item {
+                transform: translateX(calc($timeline-width - 0.5px));
+                border-right: $timeline-width solid $green;
+                flex-direction: row;
+            }
+        }
+        &.column-2 {
+            justify-content: flex-start;
+            border-left: $timeline-width solid $red;
+
+            .timeline-item {
+                transform: translateX(calc(0.5px - $timeline-width));
+                border-left: $timeline-width solid $green;
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
