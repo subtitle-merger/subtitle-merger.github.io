@@ -12,6 +12,15 @@
     </div>
 </section>
 <section class="controls">
+    <div class="remove-cc-container">
+        <input type="checkbox" name="remove-cc" id="remove-cc" [ngModel]="removeCC()" (ngModelChange)="removeCC.set($event)">
+        <label for="remove-cc">Remove CC?</label>
+        @if (removeCC()) {
+            <div>
+                <input type="text" name="cc-regex" id="cc-regex"  [ngModel]="removeCCRegExpString()" (ngModelChange)="removeCCRegExpString.set($event)">
+            </div>
+        }
+    </div>
     <button class="merge" (click)="onMergeClick()">Merge files</button>
 </section>
 <section class="timeline" [style]="sectionHeight()">
